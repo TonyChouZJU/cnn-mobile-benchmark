@@ -159,13 +159,16 @@ For every ReLU layer, we can print `#non-zero / #total count`.
 
 ```
 relu 30250 / 290400 = 10.4%
-relu 186624 / 186624 = 1.0%
+relu 186624 / 186624 = 100.0%
 relu 6836 / 64896 = 10.5%
 relu 63923 / 64896 = 98.5%
 relu 520 / 43264 = 1.4%
-relu 4096 / 4096 = 1.0%
+relu 4096 / 4096 = 100.0
 relu 1 / 4096 = 0.02%
 ```
+
+* If we can exploit this sparsity, the AlexNet forward pass on GPU would be reduced to `52.3 ms`. 
+* We can also enforce ReLU sparsity in model. In other words, make ReLU firing pattern depend on data.
 
 ### AlexNet-4layer
 
